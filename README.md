@@ -10,7 +10,7 @@ ex. comparable to youtube angular 2 videos except with questions from jug. with 
 set up like one of those kitchen shows (where the steps are pre assembled) to keep it going smooth and keep down typing on keyboard. In my mind will be to some degree a jug extension/sequel of the john papa demo from last the spring, where I got a hold of some ideas to start. 
 
 
-References Demo - 
+References Demo:
 
 1. https://angular.io/docs/ts/latest/quickstart.html
 
@@ -20,6 +20,7 @@ References Demo -
 
 4. Manning MEAP book "Angular 2 Development with TypeScript".
 
+5. YouTube Angular2U videos...
 
 Presenter Bio- bs i.e. Lehigh ms comp sci gwu; 17 years with feds. software developer with BLS and HUD (java, .net, testing, dbs, php...). 
 
