@@ -11,12 +11,16 @@ set up like one of those kitchen shows (where the steps are pre assembled) to ke
 
 
 References Demo - 
+
 1. https://angular.io/docs/ts/latest/quickstart.html
+
 2. MCJUG spring angularjs demo, john papa guide
-3. JS Jabber, podcast on Angular
+
+3. JS Jabber, podcast on Angular2, guest Angular2 core team member.
+
 4. Manning MEAP book "Angular 2 Development with TypeScript".
 
 
-Bio- bs i.e. Lehigh ms comp sci gwu; 17 years with feds. software developer with BLS and HUD (java, .net, testing, dbs, php...). 
+Presenter Bio- bs i.e. Lehigh ms comp sci gwu; 17 years with feds. software developer with BLS and HUD (java, .net, testing, dbs, php...). 
 
 
