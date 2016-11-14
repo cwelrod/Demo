@@ -1,4 +1,4 @@
-# MCJUG-Demo-Angular2-Typscript
+# MCJUG-Demo-Angular2-TypeScript
 repo for mcjug demonstration 
 
 Goal: 
