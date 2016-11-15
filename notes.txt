@@ -1,0 +1,17 @@
+cd "C:\Users\Telework\Documents\MCJUG-Demo-Angular2-Typscript"
+
+WebStorm
+
+CLI 
+
+install - 
+
+C:\Users\Telework\AppData\Roaming\npm\node_modules\angular-cli
+
+C:\Program Files\nodejs
+
+C:\Users\Telework\Documents\MCJUG-Demo-Angular2-Typescript\FinalProduct
+
+
+Auction using: 
+	http://placehold.it/

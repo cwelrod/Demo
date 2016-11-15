@@ -1,0 +1,1 @@
+CLI - product detail component
