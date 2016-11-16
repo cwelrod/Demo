@@ -8,3 +8,4 @@ describe('Component: ProductItem', () => {
     expect(true).toBeTruthy();
   });
 });
+

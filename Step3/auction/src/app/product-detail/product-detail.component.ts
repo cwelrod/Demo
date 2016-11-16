@@ -1,17 +1,13 @@
 import { Component, OnDestroy } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import {ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs/Subscription';
 
-import { Product } from '../shared/product';
-import { Review} from '../shared/review';
-import { ProductService } from '../shared/product.service';
-
-import { BidService } from './bid.service';
+import {Product, Review, ProductService} from '../services/product.service';
+import {BidService} from '../services/bid.service';
 
 @Component({
   selector: 'auction-product-page',
-  styleUrls: [ './product-detail.component.css' ],
+  styles: ['auction-stars.large {font-size: 24px;}'],
   templateUrl: './product-detail.component.html'
 })
 export class ProductDetailComponent implements OnDestroy {
@@ -24,19 +20,14 @@ export class ProductDetailComponent implements OnDestroy {
 
   isReviewHidden: boolean = true;
   isWatching: boolean = false;
-  imgHtml: SafeHtml;
 
   private subscription: Subscription;
 
   constructor(private productService: ProductService,
               private bidService: BidService,
-              private sanitizer: DomSanitizer,
-              router: ActivatedRoute) {
+              route: ActivatedRoute) {
 
-    this.imgHtml = sanitizer.bypassSecurityTrustHtml(`
-      <img src="http://placehold.it/820x320">`);
-
-    const productId = parseInt(router.snapshot.params['productId']);
+    const productId = parseInt(route.snapshot.params['productId']);
 
     this.productService
       .getProductById(productId)

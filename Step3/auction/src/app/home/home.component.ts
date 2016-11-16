@@ -1,41 +1,38 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/finally';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/retryWhen';
-import 'rxjs/add/operator/take';
+import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 
-import { ProductService } from '../shared/product.service';
-import { Product } from '../shared/product';
+import {Product, ProductService} from '../services/product.service';
 
 @Component({
   selector: 'auction-home-page',
-  styleUrls: [ './home.component.css' ],
-  templateUrl: './home.component.html'
+  styleUrls: ['./home.component.css'],
+  template: `
+    <div class="row carousel-holder">
+      <div class="col-md-12">
+        <auction-carousel></auction-carousel>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let product of products | async" class="col-sm-4 col-lg-4 col-md-4">
+        <auction-product-item [product]="product"></auction-product-item>
+      </div>
+    </div>
+  `
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   products: Observable<Product[]>;
-  errorMessage: string;
 
   constructor(private productService: ProductService) {
-    this.products = this.productService.getProducts()
-      .retryWhen(errors => {
-        this.errorMessage = `Please start the server. Retrying to connect.`;
-        return errors
-          .delay(2000) // Retry every 2 seconds
-          //.take(3)   // Max number of retries
-          .do(() => this.errorMessage += '.'); // Update the UI
-      })
-      .finally(() => this.errorMessage = null);
+    this.products = this.productService.getProducts();
 
     this.productService.searchEvent
       .subscribe(
         params => this.products = this.productService.search(params),
-        error => console.error(error),
+        console.error.bind(console),
         () => console.log('DONE')
       );
   }
-}
+  ngOnInit() {
+  }
 
+}

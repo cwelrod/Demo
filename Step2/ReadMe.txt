@@ -3,7 +3,8 @@ Pre
 
 1. DO
 
-Generate components
+Generate 
+folder components
 	ng generate component carousel
 	ng generate component footer
 	ng generate component home
@@ -14,6 +15,7 @@ Generate components
 	ng generate component stars
 
 Generate Service
+services
         cd product-detail
 	ng generate service bid 
 	ng generate service websocket

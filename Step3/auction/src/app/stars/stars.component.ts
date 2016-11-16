@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'auction-stars',
-  templateUrl: './stars.component.html',
-  styleUrls: ['./stars.component.css']
+  styles: [`.starrating { color: #d17581; }`],
+  templateUrl: './stars.component.html'
 })
 export class StarsComponent {
   private _rating: number;
@@ -22,7 +22,8 @@ export class StarsComponent {
     this.stars = Array(this.maxStars).fill(true, 0, this.rating);
   }
 
-  @Output() ratingChange: EventEmitter<number> = new EventEmitter<number>();
+  @Output()
+  ratingChange: EventEmitter<number> = new EventEmitter<number>();
 
   fillStarsWithColor(index) {
     if (!this.readonly) {
@@ -30,5 +31,4 @@ export class StarsComponent {
       this.ratingChange.emit(this.rating);
     }
   }
-
 }

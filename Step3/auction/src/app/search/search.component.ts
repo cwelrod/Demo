@@ -1,13 +1,12 @@
-import { Component} from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {ProductService} from '../shared/product.service';
+import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {ProductService} from '../services/product.service';
 
 @Component({
   selector: 'auction-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  templateUrl: './search.component.html'
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
   formModel: FormGroup;
   categories: string[];
 
@@ -27,13 +26,15 @@ export class SearchComponent {
       this.productService.searchEvent.emit(this.formModel.value);
     }
   }
+
+  ngOnInit() {
+  }
+
 }
 
 function positiveNumberValidator(control: FormControl): any {
   if (!control.value) return null;
   const price = parseInt(control.value);
-  return price === null ||
-  typeof price === 'number' &&
-  price > 0 ? null : {positivenumber: true};
+  return price === null || typeof price === 'number' && price > 0
+    ? null : {positivenumber: true};
 }
-

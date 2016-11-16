@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class AuctionCliPage {
+export class AuctionPage {
   navigateTo() {
     return browser.get('/');
   }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Product } from '../shared/product';
+import { Product } from '../services/product.service';
 
 @Component({
   selector: 'auction-product-item',
@@ -8,6 +8,7 @@ import { Product } from '../shared/product';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent {
+
   @Input() product: Product;
 
   imgHtml: SafeHtml;
