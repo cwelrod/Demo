@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Product } from '../shared/product';
 
 @Component({
-  selector: 'app-product-item',
+  selector: 'auction-product-item',
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.css']
 })
-export class ProductItemComponent implements OnInit {
+export class ProductItemComponent {
+  @Input() product: Product;
 
-  constructor() { }
+  imgHtml: SafeHtml;
 
-  ngOnInit() {
+  constructor(private sanitizer: DomSanitizer) {
+    this.imgHtml = sanitizer.bypassSecurityTrustHtml(`
+      <img src="http://placehold.it/320x150">`);
   }
-
 }

@@ -1,2 +1,8 @@
 show app that we will build
-1 scaffold the app, 2 scaffold the parts, test the app
+1 scaffold the app, 
+
+2 scaffold the parts, test the app
+
+3 let go to the app that was shown then scaffold
+
+	do some showing of actual typscript code

@@ -1,10 +1,10 @@
-import { AuctionPage } from './app.po';
+import { AuctionCliPage } from './app.po';
 
-describe('auction App', function() {
-  let page: AuctionPage;
+describe('auction-cli App', function() {
+  let page: AuctionCliPage;
 
   beforeEach(() => {
-    page = new AuctionPage();
+    page = new AuctionCliPage();
   });
 
   it('should display message saying app works', () => {
