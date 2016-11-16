@@ -1,0 +1,2 @@
+show app that we will build
+1 scaffold the app, 2 scaffold the parts, test the app

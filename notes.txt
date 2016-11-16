@@ -1,4 +1,4 @@
-cd "C:\Users\Telework\Documents\MCJUG-Demo-Angular2-Typscript"
+cd "C:\Demo\"
 
 WebStorm
 
